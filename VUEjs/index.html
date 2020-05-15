@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi primera Web App con VueJs</title>
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+  <div id="app">
+    <h1>{{ message }}</h1>
+  </div>
+  <br>
+
+  <div id="app-2">
+    <!-- <span v-bind:title="message"> -->
+    <span :title="message">
+      Pon el cursor encima del texto para ver la fecha actual
+    </span>
+  </div>
+  <br>
+
+  <div id="app-3">
+    <!-- <button v-on:click="show = !show">Reveal</button> -->
+    <button @click="show = !show">Revelador</button>
+    <span v-if="show">Now you see me! but if you click me again...</span>
+  </div>
+  <br>
+
+  <div id="app-4">
+    <ol>
+      <li v-for="todo in todos">
+        {{todo.texto}}
+      </li>
+    </ol>
+  </div>
+  <br>
+
+  <div id="app-5">
+    <h3>Un jueguito de boxeo, ataca y veras</h3>
+    <p>Das un golpe y te ripostan con otro de menos intensidad</p>
+    <p>Vidas del Agresor: {{ vidasAtacador }} | Vidas del Defensor: {{ vidasRipostador }}</p>
+    <p>Vida Agresor: {{ vidaDelQueAtaca }} | Vida Defensor: {{ vidaDelQueRiposta }}</p>
+    <p>Ataque: {{ ataque }} | Riposta: {{ riposta }}</p>
+    <button @click="atacar">Atacar</button>
+    <button @click="superGolpear">Super Golpe</button>
+    <button @click="curar">Curar</button>
+    <button @click="revivir">Resucitar</button>
+    <p v-if="showVictoria">{{ victoria }}</p>
+  </div>
+  <br>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
